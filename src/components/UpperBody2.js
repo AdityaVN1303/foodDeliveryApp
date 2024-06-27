@@ -66,7 +66,7 @@ const UpperBody = ({Data, search, city}) => {
         <h1 className='text-2xl font-bold'>Top Restaurant Chains in {city}</h1>
 
         {/* Filter Below*/}
-        <div className="filters flex justify-start">
+        <div className="filters flex lg:justify-start justify-center">
         <button onClick={()=>{toggleRating()}} className={`item border-2 border-black rounded-md p-3 m-3 ${filterStyle1}`}>
             Rating Above 4.5
         </button>

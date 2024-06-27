@@ -24,7 +24,7 @@ const Menu = () => {
 
 
   return (
-    <div className='pt-24'>
+    <div className='pt-24 px-5'>
         {
             menu?.length == 0 ? <MenuShimmer/> : <div className="menu my-10 font-abc max-w-3xl mx-auto flex-col space-y-10">
             <h1 className='text-3xl font-bold'>{menu?.[0]?.card?.card?.text} - Menu</h1>
@@ -46,7 +46,7 @@ const Menu = () => {
         </div>
         <div className="offers">
             <h1 className='text-3xl font-bold my-3'>Deals for You</h1>
-            <div className="deals flex justify-start space-x-5 items-center flex-wrap">
+            <div className="deals flex justify-start space-y-3 space-x-5 items-center flex-wrap">
                 {
                     menu && menu?.[3]?.card?.card?.gridElements?.infoWithStyle?.offers.map((item)=>{
                         return <div className="deal border-2 border-black rounded-md p-2 font-bold cursor-pointer" key={item?.info?.couponCode}>

@@ -96,7 +96,7 @@ const Body = () => {
           !loader ? 
             <>
             <div className="search flex items-center justify-center">
-             <input placeholder='Search Restaurants' type="text" className=' w-full h-10 rounded-md border-2 px-2 border-black' onChange={(e)=>{setSearch(e.target.value)}}/>
+             <input placeholder='Search Restaurants' type="text" className=' w-full h-10 text-blue-700 rounded-md border-2 px-2 border-black' onChange={(e)=>{setSearch(e.target.value)}}/>
     </div>
     { !search && <UpperBody Data={upperBodyData}/>}
     <hr />

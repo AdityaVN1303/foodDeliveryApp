@@ -8,18 +8,19 @@ const Cart = () => {
   const cartItems = useSelector((store)=>store.cart.items);
   const dispatch = useDispatch()
 
-  const deleteItem = (id)=>{
-     dispatch(removeItem(id));
-  }
+  // const deleteItem = (id)=>{
+  //   console.log(id);
+  //    dispatch(removeItem(id));
+  // }
 
 
 
   return (
-    <div className="cart pt-24 max-w-3xl mx-auto pb-10 text-center">
+    <div className="cart pt-24 max-w-3xl mx-auto pb-10 text-center px-3">
       <button onClick={()=>{dispatch(clearCart())}} className="clear bg-black text-white p-4 rounded-md my-5">Clear Cart</button>
       {
         cartItems.length != 0 ? cartItems.map((item)=>{
-          return <div>
+          return <div key={item.id}>
           <div className="item flex justify-between space-x-10 items-center space-y-5 mb-1">
   <div className="info text-left">
       <p className="name text-xl font-bold">{item.name}</p>
@@ -27,7 +28,7 @@ const Cart = () => {
       <p className="description text-sm">{item.description}</p>
   </div>
   <div className='flex justify-between items-center'>
-    <button onClick={()=>{deleteItem(item.id)}} className='bg-black text-white rounded-md p-3'>Delete</button>
+    <button onClick={()=>{dispatch(removeItem(item.id))}} className='bg-black text-white rounded-md p-3'>Delete</button>
   </div>
 </div>
 <hr />
